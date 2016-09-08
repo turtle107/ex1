@@ -1,0 +1,27 @@
+---
+title: "숙제1"
+author: "이경복"
+date: "2016년 9월 8일"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Airquality Ozone~Wind 회귀분석
+
+R에 내장된 데이터인 airquality에서, Ozone을 종속변수, Wind를 설명변수로 하여 선형회귀분석을 실행한다.
+
+```{r airquality, echo=FALSE}
+
+model<-lm(airquality$Ozone~airquality$Wind) #회귀계수
+
+model$coefficients
+
+plot(airquality$Wind,airquality$Ozone,xlab='Wind',ylab='Ozone',main='산점도')
+
+abline(model)
+
+plot(model)
+```
